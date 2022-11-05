@@ -2,9 +2,9 @@ import time
 import streamlit as st
 import numpy as np
 import pandas as pd
-# import SessionState
+import SessionState
 
-# session = SessionState.get(run_id=0)
+session = SessionState.get(run_id=0)
 
 def main():
     st.set_page_config(page_title="Colchicine Resistance Predictor", page_icon=":hospital:")
@@ -18,16 +18,12 @@ def main():
     # st.write(model.features)
 
     ageOnSet = st.checkbox("Age at symptom onset <2.5 years", value=False)
-    used_widget_key = st.get_last_used_widget_key()
-    write(used_widget_key)
     comorbidity = st.checkbox("Comorbidity", value=False)
     duration = st.checkbox("Duration of attack ≥3 days", value=False)
     frequency = st.checkbox("Attack frequency (≥1 attack/month)", value=False)
     arthritis = st.checkbox("Arthritis", value=False)
     chestPain = st.checkbox("Chest pain", value=False)
     mutations = st.checkbox("Homozygosity/compound heterozygosity for exon 10 MEFV mutations", value=False)
-    used_widget_key = st.get_last_used_widget_key()
-    write(used_widget_key)
 
     
     st.markdown("<hr>", unsafe_allow_html=True)
@@ -69,7 +65,7 @@ def main():
             chestPain = False
             mutations = False
 
-            #session.run_id += 1
+            Session.run_id += 1
 
     if computed:
 
