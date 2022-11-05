@@ -2,9 +2,9 @@ import time
 import streamlit as st
 import numpy as np
 import pandas as pd
-import SessionState
+# import SessionState
 
-session = SessionState.get(run_id=0)
+# session = SessionState.get(run_id=0)
 
 def main():
     st.set_page_config(page_title="Colchicine Resistance Predictor", page_icon=":hospital:")
@@ -54,22 +54,22 @@ def main():
 
     with right_button:
         if st.button("Clear"):
-            # st.session_state["ageOnSet"] = False
-            # st.session_state["comorbidity"] = False
-            # st.session_state["duration"] = False
-            # st.session_state["frequency"] = False
-            # st.session_state["arthritis"] = False
-            # st.session_state["chestPain"] = False
-            # st.session_state["mutations"] = False
-            # ageOnSet = False
-            # comorbidity = False
-            # duration = False
-            # frequency = False
-            # arthritis = False
-            # chestPain = False
-            # mutations = False
+            st.session_state["ageOnSet"] = False
+            st.session_state["comorbidity"] = False
+            st.session_state["duration"] = False
+            st.session_state["frequency"] = False
+            st.session_state["arthritis"] = False
+            st.session_state["chestPain"] = False
+            st.session_state["mutations"] = False
+            ageOnSet = False
+            comorbidity = False
+            duration = False
+            frequency = False
+            arthritis = False
+            chestPain = False
+            mutations = False
 
-            session.run_id += 1
+            #session.run_id += 1
 
     if computed:
 
