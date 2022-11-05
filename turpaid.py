@@ -2,9 +2,9 @@ import time
 import streamlit as st
 import numpy as np
 import pandas as pd
-import SessionState
+# import SessionState
 
-session = SessionState.get(run_id=0)
+# session = SessionState.get(run_id=0)
 
 def main():
     st.set_page_config(page_title="Colchicine Resistance Predictor", page_icon=":hospital:")
@@ -65,7 +65,7 @@ def main():
             chestPain = False
             mutations = False
 
-            Session.run_id += 1
+            #Session.run_id += 1
 
     if computed:
 
