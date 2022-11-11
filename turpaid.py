@@ -18,8 +18,8 @@ def main():
     # st.write(model.features)
 
     ageOnSet = st.checkbox("Age at symptom onset <2.5 years", value=False)
-    comorbidity = st.checkbox("Comorbidity", value=False)
-    duration = st.checkbox("Duration of attack ≥3 days", value=False)
+    # comorbidity = st.checkbox("Comorbidity", value=False)
+    # duration = st.checkbox("Duration of attack ≥3 days", value=False)
     frequency = st.checkbox("Attack frequency (≥1 attack/month)", value=False)
     arthritis = st.checkbox("Arthritis", value=False)
     chestPain = st.checkbox("Chest pain", value=False)
@@ -44,22 +44,23 @@ def main():
             #st.write(chestPain)
             #st.write(mutations)
 
-            crScore = ageOnSet*0.5 + comorbidity*1 + duration*0.5 + frequency*1 + arthritis*0.5 + chestPain*0.5 + mutations*2
+            #crScore = ageOnSet*0.5 + comorbidity*1 + duration*0.5 + frequency*1 + arthritis*0.5 + chestPain*0.5 + mutations*2
+            crScore = ageOnSet*0.5 + frequency*1.0 + arthritis*1.0 + chestPain*0.5 + mutations*2.0
             computed = True
 
 
     with right_button:
         if st.button("Clear"):
             st.session_state["ageOnSet"] = False
-            st.session_state["comorbidity"] = False
-            st.session_state["duration"] = False
+            #st.session_state["comorbidity"] = False
+            #st.session_state["duration"] = False
             st.session_state["frequency"] = False
             st.session_state["arthritis"] = False
             st.session_state["chestPain"] = False
             st.session_state["mutations"] = False
             ageOnSet = False
-            comorbidity = False
-            duration = False
+            #comorbidity = False
+            #duration = False
             frequency = False
             arthritis = False
             chestPain = False
@@ -71,7 +72,7 @@ def main():
 
         st.markdown("<br/>", unsafe_allow_html=True)
 
-        if crScore >= 2.5:
+        if crScore > 2:
             st.info('It is **likely** that your patient is resistant to colchicine. Because, my calculations show **{}** as the risk score for this patient.'.format(str(crScore)))
         else:
             st.success('It is **unlikely** that your patient is resistant to colchicine. Because, my calculations show **{}** as the risk score for this patient.'.format(str(crScore)))
