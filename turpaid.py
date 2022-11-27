@@ -17,7 +17,7 @@ def main():
     # Here is the list of features to be sent to the model
     # st.write(model.features)
 
-    ageOnSet = st.checkbox("Age at symptom onset <2.5 years", value=False)
+    ageOnSet = st.checkbox("Age at symptom onset <= 3 years", value=False)
     # comorbidity = st.checkbox("Comorbidity", value=False)
     # duration = st.checkbox("Duration of attack ≥3 days", value=False)
     frequency = st.checkbox("Attack frequency (≥1 attack/month)", value=False)
