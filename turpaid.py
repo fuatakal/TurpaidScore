@@ -9,8 +9,8 @@ import pandas as pd
 def main():
     st.set_page_config(page_title="Colchicine Resistance Predictor", page_icon=":hospital:")
 
-    st.markdown("<h1 style='text-align: center; color: black;'>Score for Predicting Colchicine Resistant Disease Course in FMF Patients</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 style='text-align: center; color: black;'>Please fill the form below and click the compute button to see how likely your patient will be resistant to colchicine.</h2>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>TURPAID Score for Predicting Colchicine Resistant Disease Course in FMF Patients</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; color: black;'>Please fill the form below and click the compute button.</h2>", unsafe_allow_html=True)
 
     st.markdown("<br/><hr>", unsafe_allow_html=True)
 
@@ -20,10 +20,10 @@ def main():
     ageOnSet = st.checkbox("Age at symptom onset ≤ 3 years", value=False)
     # comorbidity = st.checkbox("Comorbidity", value=False)
     # duration = st.checkbox("Duration of attack ≥3 days", value=False)
-    frequency = st.checkbox("Attack frequency (≥1 attack/month)", value=False)
+    frequency = st.checkbox("Attack frequency, ≥1 attack/month", value=False)
     arthritis = st.checkbox("Arthritis", value=False)
     chestPain = st.checkbox("Chest pain", value=False)
-    mutations = st.checkbox("Homozygosity/compound heterozygosity for exon 10 MEFV mutations", value=False)
+    mutations = st.checkbox("Homozygosity/compound heterozygosity for exon 10 <i>MEFV</i> mutations", value=False)
 
     
     st.markdown("<hr>", unsafe_allow_html=True)
@@ -72,12 +72,13 @@ def main():
 
         st.markdown("<br/>", unsafe_allow_html=True)
 
-        if crScore > 2:
-            st.info('It is **likely** that your patient is resistant to colchicine. Because, my calculations show **{}** as the risk score for this patient.'.format(str(crScore)))
-        else:
-            st.success('It is **unlikely** that your patient is resistant to colchicine. Because, my calculations show **{}** as the risk score for this patient.'.format(str(crScore)))
-
-        st.error('By the way, do not forget that I am just a prototype! Don\'t take my word for it.')
+        st.markdown("The minimum score is 0 and the maximum score is 4. A threshold of ≥2 predicts colchicine resistance with a sensitivity of 93.5%, and specificity of 53.8%.>", unsafe_allow_html=True)
+                       
+        st.info("The minimum score is 0 and the maximum score is 4. A threshold of ≥2 predicts colchicine resistance with a sensitivity of 93.5%, and specificity of 53.8%.>", unsafe_allow_html=True)
+                       
+        st.success("The minimum score is 0 and the maximum score is 4. A threshold of ≥2 predicts colchicine resistance with a sensitivity of 93.5%, and specificity of 53.8%.>", unsafe_allow_html=True)
+                       
+        st.error("The minimum score is 0 and the maximum score is 4. A threshold of ≥2 predicts colchicine resistance with a sensitivity of 93.5%, and specificity of 53.8%.>", unsafe_allow_html=True)                     
 
 if __name__ == '__main__':
     main()
