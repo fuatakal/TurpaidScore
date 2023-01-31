@@ -72,7 +72,9 @@ def main():
 
         st.markdown("<br/>", unsafe_allow_html=True)
 
-        st.write("**Score: {} **<br/>".format("%d", crScore), unsafe_allow_html=True)
+        st.markdown("""
+            #### "<span style="color:blue">Score: {}</span>")    
+        """.format(crScore), unsafe_allow_html=True)
 
         st.markdown("*The minimum score is 0 and the maximum score is 4. A threshold of ≥2 predicts colchicine resistance with a sensitivity of 93.5%, and specificity of 53.8%.*", unsafe_allow_html=True)
                        
