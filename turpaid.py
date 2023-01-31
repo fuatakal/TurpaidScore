@@ -23,7 +23,7 @@ def main():
     frequency = st.checkbox("Attack frequency, ≥1 attack/month", value=False)
     arthritis = st.checkbox("Arthritis", value=False)
     chestPain = st.checkbox("Chest pain", value=False)
-    mutations = st.checkbox("Homozygosity/compound heterozygosity for exon 10 <i>MEFV</i> mutations", value=False)
+    mutations = st.checkbox("Homozygosity/compound heterozygosity for exon 10 MEFV mutations", value=False)
 
     
     st.markdown("<hr>", unsafe_allow_html=True)
@@ -45,7 +45,7 @@ def main():
             #st.write(mutations)
 
             #crScore = ageOnSet*0.5 + comorbidity*1 + duration*0.5 + frequency*1 + arthritis*0.5 + chestPain*0.5 + mutations*2
-            crScore = ageOnSet*0.5 + frequency*1.0 + arthritis*1.0 + chestPain*0.5 + mutations*2.0
+            crScore = ageOnSet*0.5 + frequency*0.5 + arthritis*1.0 + chestPain*0.5 + mutations*1.5
             computed = True
 
 
