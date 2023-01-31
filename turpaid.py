@@ -73,16 +73,12 @@ def main():
         st.markdown("<br/>", unsafe_allow_html=True)
 
         st.markdown("""
-            #### "<span style="color:blue">Score: {}</span>")    
+            #### Score: <span style="color:blue">{}</span>)    
         """.format(crScore), unsafe_allow_html=True)
 
         st.markdown("*The minimum score is 0 and the maximum score is 4. A threshold of ≥2 predicts colchicine resistance with a sensitivity of 93.5%, and specificity of 53.8%.*", unsafe_allow_html=True)
                        
         st.info("The minimum score is 0 and the maximum score is 4. A threshold of ≥2 predicts colchicine resistance with a sensitivity of 93.5%, and specificity of 53.8%.")
                        
-        st.success("The minimum score is 0 and the maximum score is 4. A threshold of ≥2 predicts colchicine resistance with a sensitivity of 93.5%, and specificity of 53.8%.")
-                       
-        st.error("The minimum score is 0 and the maximum score is 4. A threshold of ≥2 predicts colchicine resistance with a sensitivity of 93.5%, and specificity of 53.8%.>")                     
-
 if __name__ == '__main__':
     main()
