@@ -9,7 +9,7 @@ import pandas as pd
 def main():
     st.set_page_config(page_title="Colchicine Resistance Predictor", page_icon=":hospital:")
 
-    st.markdown("<h1 style='text-align: center; color: black;'>TURPAIDx Score for Predicting Colchicine Resistant Disease Course in FMF Patients</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>TURPAID Score for Predicting Colchicine Resistant Disease Course in FMF Patients</h1>", unsafe_allow_html=True)
     st.markdown("<h2 style='text-align: center; color: black;'>Please fill the form below and click the compute button.</h2>", unsafe_allow_html=True)
 
     st.markdown("<br/><hr>", unsafe_allow_html=True)
